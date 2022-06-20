@@ -1,3 +1,5 @@
+
+
 fieldset#search {
     width:auto;
     background: #F1F1F1;
@@ -7,7 +9,7 @@ fieldset#search {
 
 .headerDiv {
     height: 38px;
-    background-color:rgb(98, 109, 234);
+    background-color:rgb(167, 197, 16);
     text-align:center; 
     color: rgb(219, 219, 237);
     margin-bottom: 12px; 
@@ -67,7 +69,13 @@ div.headerDiv h1 {
     justify-content:center
 }
 
+.sliderImage {
+    height: 300px;
+    width: 500px;
+}
+
 .slider {
+    
     position: relative;
     width: 500px;
     height: 300px;
@@ -145,6 +153,66 @@ mat-slider {
     
     }
 
+    .sliderImage {
+        height: 200px;
+        width: 300px;
+    }
+
+    .slider{
+        margin: auto;
+        width: 300px;
+        height:200px;
+    }
+    
+    .slider-content {
+        position: absolute;
+        width: 500%;
+        left: 0;
+        animation: slide 20s infinite;
+    }
+
+    .slider-item {
+        width: 20%;
+        float: left;
+    }
+    
+    mat-slider {
+        width: 20%;
+    }
+    
+    @keyframes slide {
+        0%{
+            transform: translateX(0px);
+        }
+        10%{
+            transform: translateX(-300px);
+        }
+        20%{
+            transform: translateX(-300px);
+        }
+        30%{
+            transform: translateX(-600px);
+        }
+        40%{
+            transform: translateX(-600px);
+        }
+        50%{
+            transform: translateX(-900px);
+        }
+        60%{
+            transform: translateX(-900px);
+        }
+        70%{
+            transform: translateX(-2000px);
+        }
+        80%{
+            transform: translateX(-2000px);
+        }
+        90%{
+            transform: translateX(0px);
+        }
+    }
+    
     .toolbar {
         width: auto;
         height: auto;
@@ -185,8 +253,9 @@ mat-slider {
         width: auto;
         
     }
-}
 
+
+}
 
 html, body { height: 100%; width:100%; background-color:rgb(219, 219, 237)}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

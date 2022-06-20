@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { EventsHomeComponent } from './events-home/events-home.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -14,9 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
-
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MatSliderModule } from '@angular/material/slider';
     AppRoutingModule,
     NoopAnimationsModule,
     MatInputModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -37,7 +38,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatToolbarModule,    
     CommonModule,
     MatSelectModule,
-    MatSliderModule
+    MatSliderModule,
+    MatGridListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

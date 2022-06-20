@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { EventItem } from '../events-model'; 
 
 @Component({
@@ -8,16 +7,25 @@ import { EventItem } from '../events-model';
   styleUrls: ['./events-home.component.css']
 })
 export class EventsHomeComponent implements OnInit {
-
+  
   constructor() { }
-
+  mobile: boolean = false;
   ngOnInit(): void {
-    // const searchEventsForm = new FormGroup({
-    //   company: new FormControl('')
-    // })
+    if (window.screen.width <= 600) { // 768px portrait
+      this.mobile = true;
+    }
   }
 
+  startDate: string = "";
+  endDate: string = "";
+  category: string = "";
+  city: string = "";
+  vanue: string = "";
 
+
+  cities: Array<string> = ['İstanbul', 'Ankara', 'İsmir', 'Antalya'];
+  categories: Array<string> = ['Resim', 'Music','Theatre'];
+  vanues: Array<string> = ['Jolly Joker Kıyı', 'Hayal Kahvesi Emaar','Hayal Kahvesi Atakent', 'Echo Performance Hall', 'Mall of Antalya'];
 
   events: EventItem[] = [
     {
@@ -49,6 +57,11 @@ export class EventsHomeComponent implements OnInit {
     console.log(this.popularEventsList);
     let element = document.getElementById('slider-item-div');
     element?.classList.remove("slider-content");
+  }
+
+
+  handleClick(){
+
   }
 
 }

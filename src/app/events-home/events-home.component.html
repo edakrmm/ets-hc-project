@@ -42,77 +42,11 @@
 
     </mat-toolbar>  
   </p>
-  
-  <div class="searchEvents">
-    <!-- [formGroup]="searchEventsForm" name="searchEvents"  -->
-    <fieldset id="search">
-      <div class="inline">
-        <mat-form-field class="left">
-          <mat-label>Başlangıç Tarihi</mat-label>
-          <input matInput [matDatepicker]="startdate" />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="startdate"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #startdate></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field class="right">
-          <mat-label>Bitiş Tarihi</mat-label>
-          <input matInput [matDatepicker]="enddate" />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="enddate"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #enddate></mat-datepicker>
-        </mat-form-field>
-      </div>
-
-      <div class="inline">
-        <div class="left">
-          <mat-form-field class="left">
-            <mat-label>Kategori</mat-label>
-            <mat-select>
-              <mat-option></mat-option>
-              <mat-option>Resim</mat-option>
-              <mat-option>Konser</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="right withMargin">
-            <mat-label>Şehir</mat-label>
-            <mat-select>  
-              <mat-option></mat-option>
-              <mat-option>İstanbul</mat-option>
-              <mat-option>Ankara</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="right">
-          <mat-form-field>
-            <mat-label>Mekan</mat-label>
-            <mat-select>
-              <mat-option></mat-option>
-              <mat-option>Jolly Joker</mat-option>
-              <mat-option>Hayal Kahvesi</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-      <div>
-        <button mat-stroked-button color="primary">
-          <mat-icon>filter_alt</mat-icon>
-          <span>Filter</span>
-        </button>
-      </div>
-    </fieldset>
-  </div>
-  
-  <br>
-  <br>
 
   <div class="slider">
     <div id="slider-item-div" class="slider-content">
       <div class="slider-item" *ngFor="let item of popularEventsList">
-        <img [src]="item.pics[0]" style="height: 300px; width: 500px;"  >
+        <img [src]="item.pics[0]" class="sliderImage" >
       </div>
     </div>
   </div>
@@ -128,6 +62,98 @@
       max="5"
     ></mat-slider>
   </div>
+
+  <div class="searchEvents">
+    <fieldset id="search">
+      <div class="inline">
+        <mat-form-field class="left">
+          <mat-label>Başlangıç Tarihi</mat-label>
+          <input [(ngModel)] = "startDate" matInput [matDatepicker]="startdate" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="startdate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #startdate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="right">
+          <mat-label>Bitiş Tarihi</mat-label>
+          <input [(ngModel)] = "endDate" matInput [matDatepicker]="enddate" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="enddate"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #enddate></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="inline">
+        <div class="left">
+          <mat-form-field class="left">
+            <mat-label>Kategori</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let category of categories" [value]="category">
+                {{category}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="right withMargin">
+            <mat-label>Şehir</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let city of cities" [value]="city">
+                {{city}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="right">
+          <mat-form-field>
+            <mat-label>Mekan</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let vanue of vanues" [value]="vanue">
+                {{vanue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <button (click)="handleClick()" mat-stroked-button color="primary">
+          <mat-icon>filter_alt</mat-icon>
+          <span>Filter</span>
+        </button>
+      </div>
+    </fieldset>
+  </div>
+  
+  <br>
+  <div style="top:0px;">
+    <mat-grid-list *ngIf="!mobile" cols="4">
+      <mat-grid-tile >
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar style="background-size: cover;"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="events[0].pics[0]" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest .
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>2</mat-grid-tile>
+      <mat-grid-tile>3</mat-grid-tile>
+      <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+
     
 
 </body>
