@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule,    
     CommonModule,
     MatSelectModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@
         <div class="navbarItems">
           <button mat-icon-button>
             <mat-icon>menu</mat-icon>
-            <span class="navSpan" style="font-size:x-large;">Home</span>
+            <span class="navSpan" style="font-size:x-large">Home</span>
           </button>
         </div>
         <div class="navbarItems">
@@ -42,8 +42,9 @@
 
     </mat-toolbar>  
   </p>
-
-  <div class="searchEvent">
+  
+  <div class="searchEvents">
+    <!-- [formGroup]="searchEventsForm" name="searchEvents"  -->
     <fieldset id="search">
       <div class="inline">
         <mat-form-field class="left">
@@ -81,7 +82,7 @@
             <mat-select>  
               <mat-option></mat-option>
               <mat-option>İstanbul</mat-option>
-              <mat-option>Antalya</mat-option>
+              <mat-option>Ankara</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -104,6 +105,31 @@
       </div>
     </fieldset>
   </div>
+  
+  <br>
+  <br>
+
+  <div class="slider">
+    <div id="slider-item-div" class="slider-content">
+      <div class="slider-item" *ngFor="let item of popularEventsList">
+        <img [src]="item.pics[0]" style="height: 300px; width: 500px;"  >
+      </div>
+    </div>
+  </div>
+
+
+  <div class="slide">
+    <mat-slider
+     #slidervalue
+     (click)="showPopularEventOnClick(slidervalue.value)"
+     tickInterval="1"
+      step="1"
+      min="1"     
+      max="5"
+    ></mat-slider>
+  </div>
+    
 
 </body>
 </html>
+
