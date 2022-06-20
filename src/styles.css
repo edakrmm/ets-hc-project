@@ -1,4 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+.headerDiv {
+    height: 38px;
+    background-color:rgb(98, 109, 234);
+    text-align:center; 
+    color: rgb(219, 219, 237);
+    margin-bottom: 12px; 
+    margin-top: 2%;
+}
+
+div.headerDiv h1 {
+    font-size: 55px;
+    font-family: Aircaft; 
+}
+
+.navSpan {
+    font-size: 15px;
+    color: white;
+    margin-left: 10px;
+}
+
+.navbarItems {
+    margin-right: 150px;
+}
+
+.navDiv {
+    display: flex;
+    width: 100%
+}
+
+.toolbar {
+    background-color: rgb(72, 72, 146);
+}
+
+.searchbar {
+    width: 50%;
+    text-align: right
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 768px)  {
+
+    .headerDiv {
+        width: auto;
+        height: auto;
+
+    }
+
+    div.headerDiv h1 {
+        font-size: 25px;
+        font-family: Aircaft; 
+        margin-left: 1%;
+    
+    }
+
+    .toolbar {
+        width: auto;
+        height: auto;
+    }
+
+    .navDiv {
+        display:block;
+    }
+
+    .navSpan {
+        font-size: 15px;
+    }
+
+    .searchbar {
+        text-align:left;
+    }
+
+}
+
+
+html, body { height: 100%; width:100%; background-color:rgb(219, 219, 237)}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
