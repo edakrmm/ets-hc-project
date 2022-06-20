@@ -1,3 +1,9 @@
+fieldset#search {
+    width:auto;
+    background: #F1F1F1;
+    border: 0 none;
+    border-bottom: 1px solid #CCC;
+}
 
 .headerDiv {
     height: 38px;
@@ -37,6 +43,25 @@ div.headerDiv h1 {
     text-align: right
 }
 
+.inline {
+    display: flex;
+}
+
+.left {
+    display: flex;
+    float: left;
+    margin-right: 133px;
+}
+
+.right {
+    display: flex;
+    float: left;
+}
+
+.withMargin {
+    margin-left: 21px
+}
+
 
 @media only screen and (min-width: 200px) and (max-width: 768px)  {
 
@@ -70,6 +95,23 @@ div.headerDiv h1 {
         text-align:left;
     }
 
+    .inline {
+        display: block;
+        width: 10px;
+    }
+
+    .left {
+        display: block;
+    }
+
+    .withMargin {
+        margin-left: 0px;
+    }
+    
+    fieldset{
+        display: block;
+        height: auto;
+    }
 }
 
 
