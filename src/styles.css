@@ -16,7 +16,7 @@ fieldset#search {
     margin-top: 2%;
 }
 
-div.headerDiv h1 {
+div.headerDiv > h1 {
     font-size: 55px;
     font-family: Aircaft; 
 }
@@ -69,9 +69,16 @@ div.headerDiv h1 {
     justify-content:center
 }
 
+
+mat-slider {
+    width: 20%;
+}
+
+
 .sliderImage {
-    height: 300px;
+    
     width: 500px;
+    height: 300px;
 }
 
 .slider {
@@ -137,6 +144,9 @@ mat-slider {
     }
 }
 
+.cardArea {
+    padding: 16px;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 768px)  {
 
@@ -257,5 +267,5 @@ mat-slider {
 
 }
 
-html, body { height: 100%; width:100%; background-color:rgb(219, 219, 237)}
+html, body { background-color:rgb(219, 219, 237)}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
