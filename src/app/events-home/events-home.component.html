@@ -5,44 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-    <div class="headerDiv">
-      <h1>ETK<span style="color: rgb(72, 72, 146)">İ</span>NL<span style="color: rgb(72, 72, 146)">İ</span>Ğ<span style="color: rgb(72, 72, 146)">İ</span>N<span style="color: rgb(72, 72, 146)">İ</span>   BUL</h1>
-    </div>
-
-  <p>
-    <mat-toolbar class="toolbar">
-      <div class="navDiv">
-        <div class="navbarItems">
-          <button mat-icon-button>
-            <mat-icon>menu</mat-icon>
-            <span class="navSpan" style="font-size:x-large">Home</span>
-          </button>
-        </div>
-        <div class="navbarItems">
-          <button mat-icon-button>
-            <mat-icon>access_alarms</mat-icon>
-            <span class="navSpan">Geçmiş Etkinlikler</span>
-          </button>
-        </div>
-        <div>
-          <button mat-icon-button>
-            <mat-icon>share</mat-icon>
-            <span class="navSpan">Paylaş</span>
-          </button>
-        </div>
-        <div class= "searchbar">
-            <button mat-icon-button>
-              <mat-form-field>
-                <input #searchBarQuery (keyup.enter)="filterClick(searchBarQuery.value)" matInput placeholder="Sanatçı Ara" />
-              </mat-form-field>
-            </button>
-        </div>
-      </div> 
-
-    </mat-toolbar>  
-  </p>
-
   <div class="slider">
     <div id="slider-item-div" class="slider-content">
       <div class="slider-item" *ngFor="let item of popularEventsList">
@@ -92,8 +54,6 @@
           <mat-form-field class="left">
             <mat-label>Kategori</mat-label>
             <mat-select [(value)]="category">
-              <mat-option [value]="">
-              </mat-option>
               <mat-option *ngFor="let category of categories" [value]="category">
                 {{category}}
               </mat-option>
@@ -102,8 +62,6 @@
           <mat-form-field class="right withMargin">
             <mat-label>Şehir</mat-label>
             <mat-select [(value)]="city">
-              <mat-option [value]="">
-              </mat-option>
               <mat-option *ngFor="let city of cities" [value]="city">
                 {{city}}
               </mat-option>
@@ -111,33 +69,47 @@
           </mat-form-field>
         </div>
         <div class="right">
-          <mat-form-field>
-            <mat-label>Mekan</mat-label>
-            <mat-select [(value)]="venue">
-              <mat-option [value]="">
-              </mat-option>
-              <mat-option *ngFor="let venue of venues" [value]="venue">
-                {{venue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+          <div class="left">
+            <mat-form-field>
+              <mat-label>Mekan</mat-label>
+              <mat-select [(value)]="venue">
+                <mat-option *ngFor="let venue of venues" [value]="venue">
+                  {{venue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="right">
+            <div class= "searchbar">
+              <button mat-icon-button>
+                  <mat-form-field>
+                  <input #searchBarQuery (keyup.enter)="filterClick(searchBarQuery.value)" matInput placeholder="Sanatçı Ara" />
+                  </mat-form-field>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <button (click)="filterClick('####')" mat-stroked-button color="primary">
-          <mat-icon>filter_alt</mat-icon>
-          <span>Filter</span>
-        </button>
+      <div class="inline">
+        <div class="left">
+          <button (click)="filterClick('####')" mat-stroked-button color="primary">
+            <mat-icon>filter_alt</mat-icon>
+            <span>Filter</span>
+          </button>
+        </div>
       </div>
     </fieldset>
   </div>
-  
-  <br>
 
+
+
+
+  <br>
+  <!-- routerLink="eventdetail" -->
   <div class="cardArea">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of intersectionList">
-        <a routerLink="eventdetail">
+        <a href="eventdetail/{{toLower(item.artist)}}" >
           <mat-card>
             <mat-card-header>
               <div mat-card-avatar style="background-size: cover;"></div>

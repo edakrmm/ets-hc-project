@@ -1,1 +1,37 @@
-<p>event-detail works!</p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="slider">
+            <div class="slider-item">
+                <img [src]="eventObject[0].pics[slidervalue.value]" class="sliderImage">
+            </div>
+        </div>
+
+        <div class="slide">
+            <mat-slider style="width:5%"
+                #slidervalue
+                (click)="eventDetailSlider(slidervalue.value)"
+                tickInterval="1"
+                step="1"
+                min="0"     
+                max="1"
+                >
+            </mat-slider>
+        </div>
+        <div style="text-align: center; margin-inline: auto;">
+            <h2>
+                {{eventObject[0].artist}}
+            </h2>
+            <h3>
+                {{eventObject[0].date}} tarihinde {{eventObject[0].venue}} - {{eventObject[0].location}} adresinden seni bekliyor
+            </h3>
+        </div>
+        <div class="slider">
+            <img src="..\assets\sitting-plan\sittingplan.jpg" class="sliderImage">
+        </div>
+    </body>
+</html>

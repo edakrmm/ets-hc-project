@@ -28,12 +28,13 @@ div.headerDiv > h1 {
 }
 
 .navbarItems {
-    margin-right: 150px;
+    margin-right: 130px;
 }
 
 .navDiv {
     display: flex;
-    width: 100%
+    width: 100%;
+    
 }
 
 .toolbar {

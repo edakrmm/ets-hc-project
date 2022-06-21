@@ -1,29 +1,21 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { EventItem } from '../events-model'; 
+import { SharedService } from '../shared.service';
+
 
 @Component({
   selector: 'events-home',
   templateUrl: './events-home.component.html',
   styleUrls: ['./events-home.component.css']
 })
-export class EventsHomeComponent implements OnInit {
-  
-  constructor() { }
-  
-  ngOnInit(): void {
+export class EventsHomeComponent implements OnInit{
+
+  constructor(private shared:SharedService) { }
+
+  ngOnInit() {
+
   }
-
-  startDate: string = "";
-  endDate: string = "";
-  category: string = "";
-  city: string = "";
-  venue: string = "";
-
-
-  cities: Array<string> = ['İstanbul', 'Ankara', 'İzmir', 'Antalya'];
-  categories: Array<string> = ['Resim', 'Music','Theatre'];
-  venues: Array<string> = ['Jolly Joker Kıyı', 'Hayal Kahvesi Emaar','Hayal Kahvesi Atakent', 'Echo Performance Hall', 'Mall of Antalya'];
 
   events: EventItem[] = [
     {
@@ -46,30 +38,40 @@ export class EventsHomeComponent implements OnInit {
     }
   ]
 
+  startDate: string = "";
+  endDate: string = "";
+  category: string = "";
+  city: string = "";
+  venue: string = "";
+
+
+  cities: Array<string> = ['', 'İstanbul', 'Ankara', 'İzmir', 'Antalya'];
+  categories: Array<string> = ['', 'Resim', 'Music','Theatre'];
+  venues: Array<string> = ['', 'Jolly Joker Kıyı', 'Hayal Kahvesi Emaar','Hayal Kahvesi Atakent', 'Echo Performance Hall', 'Mall of Antalya'];
+
+
+
   popularEventsList = this.events.filter((item) => item.isPopular==true);
-  filteredStartDateList: Array<any> = [];
-  filteredEndDateList: Array<any> = [];
-  filteredCategoryList: Array<any> = [];
-  filteredCityList: Array<any> = [];
-  filteredVenueList: Array<any> = [];
-  intersectionList: Array<any> = this.events;
+  filteredStartDateList: any[] = [];
+  filteredEndDateList: any[] = [];
+  filteredCategoryList: any[] = [];
+  filteredCityList: any[] = [];
+  filteredVenueList: any[] = [];
+  intersectionList: any[] = this.events;
   
   showPopularEventOnClick(slidervalue: any){
     this.popularEventsList = [];
     this.popularEventsList.push(this.events[slidervalue]);
-    console.log(this.popularEventsList);
     let element = document.getElementById('slider-item-div');
     element?.classList.remove("slider-content");
   }
 
-  //Object.values(object1)
 
-  filterClick(value:string){
+  filterClick(value:string): void{
 
-    let arrayList:Array<any> = [];
-
+    let arrayList:any[] = [];
     if (value == "####"){
-      console.log('empty')
+      this.intersectionList = this.events;
       if (this.startDate!=''){
         this.filteredStartDateList = this.events.filter((item) => formatDate(this.startDate,'yyyy-MM-dd','en_US') <= formatDate(item.date,'yyyy-MM-dd','en_US'));
         arrayList.push(this.filteredStartDateList);
@@ -102,22 +104,16 @@ export class EventsHomeComponent implements OnInit {
           });
         });
       }
-  
-      if(this.intersectionList.length !=0 ){
-        return this.intersectionList;
-      }
-      else {
-        return this.events
-      }
-      
     }
-
     else {
-      console.log('not empty')
       this.intersectionList = this.events.filter((x) => (x.artist).toLocaleLowerCase().includes(value.toLocaleLowerCase()))
-      return this.intersectionList
+      console.log(this.intersectionList);
     }
     
+  }
+
+  toLower(val:string) {
+    return this.shared.removeTurkishCharactersFromSlug(val)
   }
 
 
