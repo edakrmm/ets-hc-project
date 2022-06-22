@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+
         <div class="slider">
             <div class="slider-item">
                 <img [src]="eventObject[0].pics[slidervalue.value]" class="sliderImage">
             </div>
         </div>
 
+
         <div class="slide">
             <mat-slider style="width:5%"
                 #slidervalue
-                (click)="eventDetailSlider(slidervalue.value)"
                 tickInterval="1"
                 step="1"
                 min="0"     
@@ -22,6 +23,8 @@
                 >
             </mat-slider>
         </div>
+
+
         <div style="text-align: center; margin-inline: auto;">
             <h2>
                 {{eventObject[0].artist}}
@@ -33,5 +36,24 @@
         <div class="slider">
             <img src="..\assets\sitting-plan\sittingplan.jpg" class="sliderImage">
         </div>
+
+        <div style="text-align: center; margin-inline: auto; margin-top: 7px;">
+            <mat-form-field appearance="fill">
+              <mat-label>Kategori Seç</mat-label>
+              <mat-select #categoryselected>
+                <mat-option *ngFor="let price of eventObject[0].ticketPrice; let i = index" [value]="price">
+                    {{i+1}}. Kategori {{price}} TL
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div style="text-align: center; margin-bottom:15px;">
+            <button *ngIf="categoryselected.value" mat-raised-button color="warn">
+              <span>Satın Al</span>
+            </button>
+          </div>
+
+
     </body>
 </html>

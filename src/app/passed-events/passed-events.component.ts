@@ -1,20 +1,19 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { EventItem } from '../events-model'; 
-import {ActivatedRoute} from "@angular/router";
-import { SharedService } from '../shared.service';
+import { EventItem } from '../events-model';
 
 @Component({
-  selector: 'event-detail',
-  templateUrl: './event-detail.component.html',
-  styleUrls: ['./event-detail.component.css']
+  selector: 'app-passed-events',
+  templateUrl: './passed-events.component.html',
+  styleUrls: ['./passed-events.component.css']
 })
-export class EventDetailComponent implements OnInit {
+export class PassedEventsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private shared:SharedService) { }
+  constructor() { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
+
 
   events: EventItem[] = [
     {
@@ -30,17 +29,14 @@ export class EventDetailComponent implements OnInit {
       pics: ['..\\assets\\isinkaraca\\isin1.jpeg','..\\assets\\isinkaraca\\isin2.jpg'], date: "2022-06-04", venue: "Echo Performance Hall", location: "İzmir", category: "Music", artist: "Işın Karaca", ticketPrice: [100,150,275], isPopular: true
     },
     {
-      pics: ['..\\assets\\baba\\baba1.jpg','..\\assets\\baba\\baba2.jpg'], date: "2022-07-05", venue: "Mall of Antalya", location: "Antalya", category: "Music", artist: "Baba", ticketPrice: [100,150,275], isPopular: true
+      pics: ['..\\assets\\baba\\baba1.jpg','..\\assets\\baba\\baba2.jpg'], date: "2021-07-05", venue: "Mall of Antalya", location: "Antalya", category: "Music", artist: "Baba", ticketPrice: [100,150,275], isPopular: true
     },
     {
       pics: ['..\\assets\\haktan\\haktan1.jpg'], date: "2022-09-10", venue: "Jolly Joker Kıyı", location: "İstanbul", category: "Music", artist: "Kaya", ticketPrice: [100,150,275], isPopular: true
     }
   ]
- 
 
-  slug = this.route.snapshot.paramMap.get("slug");
-
-  eventObject = this.events.filter((event:any) => this.shared.removeTurkishCharactersFromSlug(event.artist) == this.slug);
-
+  todaysDate = new Date();
+  passedEvents = this.events.filter((event:any) => formatDate(event.date,'yyyy-MM-dd','en_US') < formatDate(this.todaysDate,'yyyy-MM-dd','en_US'));
 
 }

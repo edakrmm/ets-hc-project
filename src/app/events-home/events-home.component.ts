@@ -4,6 +4,7 @@ import { EventItem } from '../events-model';
 import { SharedService } from '../shared.service';
 
 
+
 @Component({
   selector: 'events-home',
   templateUrl: './events-home.component.html',

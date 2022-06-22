@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let event of passedEvents">
+                <mat-card class="example-card">
+                    <mat-card-title-group>
+                    <mat-card-title>{{event.artist}}</mat-card-title>
+                    <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
+                    <img mat-card-md-image [src]="event.pics[0]" >
+                    </mat-card-title-group>
+                    <mat-card-content>
+                        {{event.venue}} - {{event.location}} adresinde izleyicilerle buluştu...
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </body>
+</html>
+
+

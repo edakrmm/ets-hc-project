@@ -19,12 +19,14 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PassedEventsComponent } from './passed-events/passed-events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsHomeComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    PassedEventsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSliderModule,
     MatGridListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
