@@ -1,4 +1,48 @@
+.share-btn-container {
+    background: rgb(220, 230, 241);
+    height: 100%;
+    width: fit-content;
+    vertical-align: middle;
+}
 
+.share-btn-container a i {
+    font-size: 30px;
+    height: 100%;
+    width:fit-content;
+    vertical-align: middle;
+
+}
+
+.share-btn-container a {
+    margin: 0px 6px;
+    transition: 500ms;
+    bottom: 0;
+    vertical-align: middle;
+}
+
+.share-btn-container a:hover{
+    transform: scale(1.2);
+}
+
+.share-btn-container .fa-facebook {
+    color: #3b5998;
+}
+
+.share-btn-container .fa-twitter {
+    color: #1da1f2;
+}
+
+.share-btn-container .fa-linkedin {
+    color: #0077b5;
+}
+
+.share-btn-container .fa-pinterest {
+    color: #bd081c;
+}
+
+.share-btn-container .fa-whatsapp {
+    color: #25d366;
+}
 
 fieldset#search {
     width:auto;
@@ -28,11 +72,12 @@ div.headerDiv > h1 {
 }
 
 .navbarItems {
-    margin-right: 130px;
+    margin-right: 150px;
 }
 
 .navDiv {
     display: flex;
+
     width: 100%;
     
 }
@@ -261,10 +306,12 @@ mat-slider {
 
     .slide {
         display: flex;
-        width: auto;
-        
+        width: auto;   
     }
 
+    .share-btn-container a i {
+        font-size: 20px;
+    }
 
 }
 

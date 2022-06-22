@@ -2,34 +2,47 @@
 <html>
     <head>
         <title></title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"/>
     </head>
     <body>
         <div class="headerDiv">
             <h1>ETK<span style="color: rgb(72, 72, 146)">İ</span>NL<span style="color: rgb(72, 72, 146)">İ</span>Ğ<span style="color: rgb(72, 72, 146)">İ</span>N<span style="color: rgb(72, 72, 146)">İ</span>   BUL</h1>
         </div>
-    
+
         <p>
         <mat-toolbar class="toolbar">
-            <div class="navDiv">
-                <div class="navbarItems">
-                    <button routerLink="" mat-icon-button>
-                    <mat-icon>menu</mat-icon>
-                    <span class="navSpan" style="font-size:x-large">Home</span>
-                    </button>
-                </div>
-                <div class="navbarItems">
-                    <button mat-icon-button routerLink="passedevents">
-                    <mat-icon>access_alarms</mat-icon>
-                    <span class="navSpan">Geçmiş Etkinlikler</span>
-                    </button>
-                </div>
-                <div>
-                    <button mat-icon-button>
-                    <mat-icon>share</mat-icon>
-                    <span class="navSpan">Paylaş</span>
-                    </button>
-                </div>
-            </div> 
+          <div class="navDiv">
+              <div class="navbarItems">
+                  <button routerLink="" mat-icon-button>
+                  <mat-icon>menu</mat-icon>
+                  <span class="navSpan" style="font-size:x-large">Home</span>
+                  </button>
+              </div>
+              <div class="navbarItems">
+                  <button mat-icon-button routerLink="passedevents">
+                  <mat-icon>access_alarms</mat-icon>
+                  <span class="navSpan">Geçmiş Etkinlikler</span>
+                  </button>
+              </div>
+              <div class="share-btn-container" >
+
+                <a href="https://www.facebook.com/sharer.php?u=http://localhost:4200/" class="facebook-btn">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/share?url=http://localhost:4200/&text=Hi everyone, please check this out" class="twitter-btn">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:4200/&description=Hi everyone, please check this out" class="pinterest-btn">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?url=http://localhost:4200/&title=Hi everyone, please check this out" class="linkedin-btn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text=http://localhost:4200/ Hi everyone, please check this out" class="whatsapp-btn">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+          </div> 
         </mat-toolbar>  
         </p>
     </body>
