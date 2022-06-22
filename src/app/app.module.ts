@@ -20,13 +20,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PassedEventsComponent } from './passed-events/passed-events.component';
+import { VenueEventsComponent } from './venue-events/venue-events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsHomeComponent,
     EventDetailComponent,
-    PassedEventsComponent
+    PassedEventsComponent,
+    VenueEventsComponent
   ],
   imports: [
     BrowserModule,

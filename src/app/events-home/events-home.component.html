@@ -103,25 +103,25 @@
   </div>
 
   <br>
-  <!-- routerLink="eventdetail" -->
+
   <div class="cardArea">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of intersectionList">
-        <a href="eventdetail/{{toLower(item.artist)}}" style="text-decoration: none;">
-          <mat-card>
+        <mat-card>
+          <a href="eventdetail/{{toLower(item.artist)}}" style="text-decoration: none;">
             <mat-card-header>
               <div mat-card-avatar style="background-size: cover;"></div>
-              <mat-card-title  >{{item.artist}}</mat-card-title>
+              <mat-card-title>{{item.artist}}</mat-card-title>
               <mat-card-subtitle fxLayout="row wrap" fxLayoutGap="16px grid">{{item.date}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image [src]="item.pics[0]">
-            <mat-card-content>
-              <p>
-                {{item.venue}} - {{item.location}} adresinde sizlerle buluşuyor...
-              </p>
-            </mat-card-content>
-          </mat-card>    
-        </a>
+            <img mat-card-image [src]="item.pics[0]" onerror="src='..\\assets\\defaultpic\\df.jpg';" >
+          </a>
+          <mat-card-content>
+          <p>
+            <a href="venueevents/{{toLower(item.venue)}}" style="color:black;">{{item.venue}} - {{item.location}}</a> adresinde sizlerle buluşuyor...
+          </p>
+          </mat-card-content>
+        </mat-card>    
       </div>
     </div>
   </div>

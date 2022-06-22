@@ -11,7 +11,7 @@
                     <mat-card-title-group>
                     <mat-card-title>{{event.artist}}</mat-card-title>
                     <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
-                    <img mat-card-md-image [src]="event.pics[0]" >
+                    <img mat-card-md-image [src]="event.pics[0]" onerror="src='..\\assets\\defaultpic\\df.jpg';">
                     </mat-card-title-group>
                     <mat-card-content>
                         {{event.venue}} - {{event.location}} adresinde izleyicilerle buluştu...
