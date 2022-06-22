@@ -107,7 +107,7 @@
   <div class="cardArea">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
       <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of intersectionList">
-        <a href="eventdetail/{{toLower(item.artist)}}" >
+        <a href="eventdetail/{{toLower(item.artist)}}" style="text-decoration: none;">
           <mat-card>
             <mat-card-header>
               <div mat-card-avatar style="background-size: cover;"></div>
@@ -117,13 +117,9 @@
             <img mat-card-image [src]="item.pics[0]">
             <mat-card-content>
               <p>
-                {{item.venue}} adresinde sizlerle buluşuyor...
+                {{item.venue}} - {{item.location}} adresinde sizlerle buluşuyor...
               </p>
             </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
           </mat-card>    
         </a>
       </div>
