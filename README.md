@@ -1,27 +1,19 @@
 # EventsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+A Responsive project that is generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-## Development server
+On the "Etkinliğini Bul" site, users will be able to easily search for all events in the country and view their details.
+they can view.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+• In the project; users can view available concerts, theatre from the website. They can view details of the events and have information about it; description of each event, start and end date, location of the event, the ticket price according to the seat, etc...
+• On the home page, popular event's pictures will be displayed with a auto scroll slider.
+• Users can also filter the date, types of events (concert, theater, etc.), the venue and city of the event and will be able to find the most suitable event for them.
+• There is a search bar on the website to search for events base on artist name.
+• Overdue events are listed in a separate tab.
+• Each event can have one or more images, as well as a default image for informal events.
+• Clicking on the venue of an event would list all events related to that venue.
+• On the home page, there are share buttons for the popular social media platforms.
 
-## Code scaffolding
+![localhost_4200_](https://user-images.githubusercontent.com/41698019/175810607-8e7ec5aa-95bf-4810-991f-baa2d4bafa42.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![localhost_4200_(iPhone SE) (1)](https://user-images.githubusercontent.com/41698019/175810608-3f295ec8-d760-400d-978e-332983b5f86f.png)
