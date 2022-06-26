@@ -295,6 +295,10 @@ mat-slider {
         display: block;
     }
 
+    .right {
+        display: block;
+    }
+
     .withMargin {
         margin-left: 0px;
     }
