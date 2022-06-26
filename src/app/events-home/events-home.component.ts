@@ -46,7 +46,7 @@ export class EventsHomeComponent implements OnInit{
 
   showPopularEventOnClick(slidervalue: any){
     this.popularEventsList = [];
-    this.popularEventsList.push(this.eventList[slidervalue]);
+    this.popularEventsList.push(this.eventList.filter((item) => item.isPopular==true)[slidervalue-1]);
     let element = document.getElementById('slider-item-div');
     element?.classList.remove("slider-content");
   }
