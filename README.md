@@ -14,6 +14,7 @@ they can view.
 • Clicking on the venue of an event would list all events related to that venue.
 • On the home page, there are share buttons for the popular social media platforms.
 
-![localhost_4200_](https://user-images.githubusercontent.com/41698019/175810607-8e7ec5aa-95bf-4810-991f-baa2d4bafa42.png)
+![image](https://user-images.githubusercontent.com/41698019/175811133-74cee739-4a64-4a7e-bd93-0d2f6be62ee4.png)
 
-![localhost_4200_(iPhone SE) (1)](https://user-images.githubusercontent.com/41698019/175810608-3f295ec8-d760-400d-978e-332983b5f86f.png)
+![image](https://user-images.githubusercontent.com/41698019/175811150-e0c5167c-0649-40cb-9561-c6914043eaf5.png)
+
